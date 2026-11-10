@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { color-scheme: light; }
+  html.dark { color-scheme: dark; }
+  body {
+    @apply bg-ink-50 font-sans text-ink-800 antialiased dark:bg-ink-950 dark:text-ink-100;
+  }
+  ::selection { @apply bg-accent-500/30; }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition-colors
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500/60 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply btn bg-accent-500 text-ink-950 hover:bg-accent-400; }
+  .btn-secondary {
+    @apply btn border border-ink-200 bg-white text-ink-700 hover:bg-ink-100
+      dark:border-ink-700 dark:bg-ink-850 dark:text-ink-200 dark:hover:bg-ink-800;
+  }
+  .btn-ghost { @apply btn text-ink-500 hover:bg-ink-100 hover:text-ink-800 dark:text-ink-400 dark:hover:bg-ink-800 dark:hover:text-ink-100; }
+  .btn-danger { @apply btn bg-rose-600 text-white hover:bg-rose-500; }
+  .input {
+    @apply w-full rounded-lg border border-ink-200 bg-white px-3 py-2 text-sm text-ink-800 placeholder:text-ink-400
+      focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/25
+      dark:border-ink-700 dark:bg-ink-850 dark:text-ink-100 dark:placeholder:text-ink-500;
+  }
+  .input-error { @apply border-rose-500 focus:border-rose-500 focus:ring-rose-500/25 dark:border-rose-500; }
+  .label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-ink-500 dark:text-ink-400; }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium;
+  }
+}
+
+/* Syntax-Highlighting (highlight.js) – Farben für beide Themes */
+.hljs { color: #24292f; }
+.dark .hljs { color: #d5d9e2; }
+.hljs-comment, .hljs-quote { color: #6e7781; font-style: italic; }
+.dark .hljs-comment, .dark .hljs-quote { color: #66728a; }
+.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-meta .hljs-keyword { color: #cf222e; }
+.dark .hljs-keyword, .dark .hljs-selector-tag, .dark .hljs-literal, .dark .hljs-meta .hljs-keyword { color: #f78c9c; }
+.hljs-string, .hljs-regexp, .hljs-addition { color: #0a7b5a; }
+.dark .hljs-string, .dark .hljs-regexp, .dark .hljs-addition { color: #6ee7c2; }
+.hljs-number, .hljs-symbol, .hljs-bullet { color: #0550ae; }
+.dark .hljs-number, .dark .hljs-symbol, .dark .hljs-bullet { color: #79c0ff; }
+.hljs-title, .hljs-title.function_, .hljs-section { color: #8250df; }
+.dark .hljs-title, .dark .hljs-title.function_, .dark .hljs-section { color: #c4a7ff; }
+.hljs-type, .hljs-title.class_, .hljs-built_in { color: #953800; }
+.dark .hljs-type, .dark .hljs-title.class_, .dark .hljs-built_in { color: #ffbc6d; }
+.hljs-attr, .hljs-attribute, .hljs-variable, .hljs-template-variable, .hljs-property { color: #0550ae; }
+.dark .hljs-attr, .dark .hljs-attribute, .dark .hljs-variable, .dark .hljs-template-variable, .dark .hljs-property { color: #8ecbff; }
+.hljs-meta, .hljs-tag, .hljs-name { color: #116329; }
+.dark .hljs-meta, .dark .hljs-tag, .dark .hljs-name { color: #7ee2a8; }
+.hljs-deletion { color: #cf222e; }
+.dark .hljs-deletion { color: #ff8b8b; }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 600; }
